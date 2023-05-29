@@ -4,7 +4,7 @@
 <%= simple_form_for(@skill) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category, collection: %w['Art', 'Music', 'Craftmanship', 'Language'] %>
+  <%= f.input :category, collection: %w[Art Music Craftmanship Language] %>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
