@@ -9,7 +9,8 @@
     <% if skill.photo.attached? %>
       <%= cl_image_tag skill.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "https://i.pinimg.com/564x/2b/e4/7b/2be47bd5dfa92ade3bc48e97664b23e5.jpg", alt: "Default image", width: 200 %>
+      <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685373125/Apptitude/default_uwcohm.jpg",
+      width: 400, height: 300, crop: :fill) %>
     <% end %>
       <%= skill.name %>
       <br>
