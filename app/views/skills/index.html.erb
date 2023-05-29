@@ -1,10 +1,21 @@
 <h1>Skills#index</h1>
 <p>Find me in app/views/skills/index.html.erb</p>
 
-<% @skills.each do |skill| %>
-  <%= skill.name %>
-  <br>
-  <%= skill.description %>
-  <br>
-  <%= skill.category %>
-<% end %>
+<button class='btn btn-primary'><%= link_to 'Add new skill', skills_new_path %></button>
+
+<div class="card">
+  <% @skills.each do |skill| %>
+<%# if no photo uploaded, display default picture depending on category (right now only one img-link) %>
+    <% if skill.photo.attached? %>
+      <%= cl_image_tag skill.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "https://i.pinimg.com/564x/2b/e4/7b/2be47bd5dfa92ade3bc48e97664b23e5.jpg", alt: "Default image", width: 200 %>
+    <% end %>
+      <%= skill.name %>
+      <br>
+      <%= skill.description %>
+      <br>
+      <%= skill.category %>
+      <br>
+  <% end %>
+</div>
