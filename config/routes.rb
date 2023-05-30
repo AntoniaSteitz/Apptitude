@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/home', to: 'pages#home'
 
+  resources :skills, only: [:index, :show, :new, :create]
 end

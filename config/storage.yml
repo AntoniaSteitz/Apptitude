@@ -32,3 +32,11 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+cloudinary:
+  service: Cloudinary
+  folder:  <%= Rails.env %>
+
+# cloudinary_gallery:
+#   service: Cloudinary
+#   folder: "Apptitude"
