@@ -1,0 +1,15 @@
+<div class="card">
+  <% if @skill.photo.attached? %>
+    <%= cl_image_tag @skill.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685373125/Apptitude/default_uwcohm.jpg",
+    width: 400, height: 300, crop: :fill) %>
+  <% end %>
+    <%= @skill.name %>
+    <br>
+    <%= @skill.category %>
+    <br>
+    <%= @skill.description %>
+    <br>
+    // add user
+  <% end %>

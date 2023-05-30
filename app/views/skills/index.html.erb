@@ -1,22 +1,21 @@
 <h1>Skills#index</h1>
-<p>Find me in app/views/skills/index.html.erb</p>
 
-<button type="button" class="btn btn-outline-primary"><%= link_to 'Add new skill', skills_new_path %></button>
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Add new skill', new_skill_path %></button>
 
-<div class="card">
-  <% @skills.each do |skill| %>
-<%# if no photo uploaded, display default picture depending on category (right now only one img-link) %>
-<%# open: check if photo uploaded to correct folder %>
-    <% if skill.photo.attached? %>
-      <%= cl_image_tag skill.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685373125/Apptitude/default_uwcohm.jpg",
-      width: 400, height: 300, crop: :fill) %>
-    <% end %>
-      <%= skill.name %>
-      <br>
-      <%= skill.category %>
-      <br>
-      // add user
+<% @skills.each do |skill| %>
+  <%= link_to skill_path(skill) do %>
+    <div class="card">
+      <% if skill.photo.attached? %>
+        <%= cl_image_tag skill.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685373125/Apptitude/default_uwcohm.jpg",
+        width: 400, height: 300, crop: :fill) %>
+      <% end %>
+        <%= skill.name %>
+        <br>
+        <%= skill.category %>
+        <br>
+        <%# add user %>
+    </div>
   <% end %>
-</div>
+<% end %>

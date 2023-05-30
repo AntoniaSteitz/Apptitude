@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
   end
 
   def show
-    @skill = Skill(params[:id])
+    @skill = Skill.find(params[:id])
   end
 
   def new
