@@ -13,9 +13,27 @@
 }
 
 .nav-link {
-  color: white;
+  color: $main-yellow;
 }
 
 .nav-link:hover {
   color: $red;
+}
+
+.navbar-brand {
+  color: $main-blue;
+}
+
+
+.dropdown-menu {
+  background-color: $main-yellow;
+  color: $main-blue;
+  border-radius: 25px;
+  font-size: 'Montserrat', 30px;;
+}
+
+.dropdown-menu:hover {
+  color: $main-red;
+  border-radius: 25px;
+  font-size: 'Montserrat', 30px;;
 }
