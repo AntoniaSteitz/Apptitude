@@ -35,8 +35,8 @@ local:
 
 cloudinary:
   service: Cloudinary
-  folder: <%= Rails.env %>
+  folder:  <%= Rails.env %>
 
-cloudinary_gallery:
-  service: Cloudinary
-  folder: Apptitude
+# cloudinary_gallery:
+#   service: Cloudinary
+#   folder: "Apptitude"

@@ -1,15 +1,18 @@
-<div class="card">
+<div class="card" style="width: 30rem;">
+  <div class="card-img-top">
   <% if @skill.photo.attached? %>
     <%= cl_image_tag @skill.photo.key, height: 300, width: 400, crop: :fill %>
   <% else %>
-    <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685373125/Apptitude/default_uwcohm.jpg",
+    <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg",
     width: 400, height: 300, crop: :fill) %>
   <% end %>
-    <%= @skill.name %>
-    <br>
-    <%= @skill.category %>
-    <br>
-    <%= @skill.description %>
-    <br>
-    // add user
-  <% end %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @skill.name %></h5>
+    <h6 class="card-subtitle"><%= @skill.category %></h6>
+    <p class="card-text"><%= @skill.description %></p>
+    <%# add user %>
+    <a href="#" class="btn btn-primary">Book</a>
+    <%# add booking link %>
+  </div>
+</div>
