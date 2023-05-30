@@ -25,3 +25,7 @@ end
     category: ["Language", "Art", "Craftsmanship"].sample
   )
 end
+
+# Skill.destroy_all
+
+# # categories = ['Art', 'Music', 'Craftmanship', 'Language']

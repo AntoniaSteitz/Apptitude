@@ -77,6 +77,7 @@ group :test do
   gem "webdrivers"
 end
 
+gem "cloudinary"
 gem "devise"
 
 # adding faker for creating the seed file
