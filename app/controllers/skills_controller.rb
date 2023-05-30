@@ -3,6 +3,10 @@ class SkillsController < ApplicationController
     @skills = Skill.all
   end
 
+  def show
+    @skill = Skill(params[:id])
+  end
+
   def new
     @skill = Skill.new
   end
