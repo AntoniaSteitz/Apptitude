@@ -28,7 +28,7 @@ puts "users created"
     name: Faker::Hobby.activity,
     description: Faker::Hipster.paragraph,
     category: ['Art', 'Music', 'Craftmanship', 'Language'].sample,
-    user: User.find(rand(1..13))
+    user: User.find(rand(1..10))
   )
 end
 puts "skills created"
