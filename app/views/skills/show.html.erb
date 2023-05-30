@@ -9,9 +9,10 @@
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= @skill.name %></h5>
+    <%# add user %>
+    <h5 class="card-title"><%= @skill.user %></h5>
     <h6 class="card-subtitle"><%= @skill.category %></h6>
     <p class="card-text"><%= @skill.description %></p>
-    <%# add user %>
     <a href="#" class="btn btn-primary">Book</a>
     <%# add booking link %>
   </div>
