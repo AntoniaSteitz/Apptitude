@@ -78,3 +78,6 @@ group :test do
 end
 
 gem "devise"
+
+# adding faker for creating the seed file
+gem 'faker'
