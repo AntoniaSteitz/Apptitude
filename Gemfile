@@ -82,3 +82,6 @@ gem "devise"
 
 # adding faker for creating the seed file
 gem 'faker'
+
+# adding the sweetalert gem
+# gem 'sweetalert-rails'

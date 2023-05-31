@@ -13,7 +13,11 @@
     <h5 class="card-title"><%= @skill.user["first_name"] %></h5>
     <h6 class="card-subtitle"><%= @skill.category %></h6>
     <p class="card-text"><%= @skill.description %></p>
-    <a href="#" class="btn btn-primary">Book</a>
+    <%# <a href="#" class="btn btn-primary">Book</a> %>
+    <%# booking = Booking.find_by(user: @skill.user, skill: @skill) %>
+    <%# raise %>
+    <%# button_to "Book", new_skill_booking_path(@skill), class: "btn btn-warning"%>
+    <%= link_to "Book", new_skill_booking_path(@skill), class: "btn btn-primary"%><br>
     <%# add booking link %>
   </div>
 </div>
