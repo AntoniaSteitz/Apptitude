@@ -3,12 +3,23 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 10px;
+  border-style: none;
 
-  .card{
+  .card {
     border-radius: 1em;
     text-align:left;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
     background-color: $main-yellow;
     margin: 2px;
+  }
+
+  .card-img-top {
+    border-radius: 1em;
+  }
+
+  .card-text {
+    position: absolute;
+    right: 16px;
+    bottom: 0px;
   }
 }
