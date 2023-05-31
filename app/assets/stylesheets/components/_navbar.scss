@@ -24,6 +24,10 @@
   color: $main-blue;
 }
 
+.navbar-brand:hover {
+  color: $main-yellow;
+}
+
 
 .dropdown-menu {
   background-color: $main-yellow;
@@ -35,5 +39,15 @@
 .dropdown-menu:hover {
   color: $main-red;
   border-radius: 25px;
-  font-size: 'Montserrat', 30px;;
+  font-size: 'Montserrat', 30px;
+}
+
+.fas {
+  font-weight: 1200px;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  color: $main-green;
+  font-style: bold;
 }
