@@ -46,7 +46,8 @@
   font-weight: 1200px;
 }
 
-.dropdown-item:focus {
-  background-color: none;
+.dropdown-item:hover {
+  background-color: transparent;
   color: $main-green;
+  font-style: bold;
 }
