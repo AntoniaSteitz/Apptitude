@@ -1,0 +1,17 @@
+.btn-custom {
+  width: 100px;
+  height: 30px;
+  background-color: $main-blue;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 3px;
+
+  &:hover {
+    background-color: $main-green;
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+}
+}

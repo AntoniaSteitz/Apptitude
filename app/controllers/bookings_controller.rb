@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     # raise
     if @booking.save
       redirect_to dashboard_path
+      # , notice: "Success!"
     else
       render :new, status: :unprocessable_entity
     end
