@@ -1,16 +1,18 @@
 <h1>My Bookings</h1>
-<% @bookings.each do |booking| %>
-  <div class="card mb-3 rounded" style="width: 30rem;">
-    <div class="card-img-top">
+<div class="cards">
+  <% @bookings.each do |booking| %>
+    <div class="card">
+      <div class="card-img">
         <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg",
-        width: 400, height: 300, crop: :fill) %>
+        class: "img-fluid", style: "object-fit: cover;") %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.skill.name %></h5>
+        <%# add user-avatar %>
+        <h5 class="card-title">By <%= booking.skill.user["first_name"] %></h5>
+        <h6 class="card-subtitle"><%= booking.skill.category %></h6>
+        <h6 class="card-title">Booked for: <%= booking.date %></h6>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title"><%= booking.skill.name %></h5>
-      <%# add user-avatar %>
-      <h5 class="card-title">By <%= booking.skill.user["first_name"] %></h5>
-      <h6 class="card-subtitle"><%= booking.skill.category %></h6>
-      <h6 class="card-title">Booked for: <%= booking.date %></h6>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

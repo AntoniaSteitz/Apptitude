@@ -17,7 +17,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= skill.name %></h5>
         <%# add user-avatar %>
-        <h5 class="card-title"><%= skill.user["first_name"] %></h5>
+        <h5 class="card-title">By <%= skill.user["first_name"] %></h5>
         <h6 class="card-subtitle"><%= skill.category %></h6>
         <button class="btn btn-custom"><%= link_to "Details", skill_path(skill), class: "link" %></button>
       </div>

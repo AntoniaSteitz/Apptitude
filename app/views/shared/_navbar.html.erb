@@ -14,9 +14,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://i.insider.com/631efb1de8b500001850c163?width=1136&format=jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Home", home_path, class: "dropdown-item" %>
-              <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-
+              <%= link_to "Home", skills_path, class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
