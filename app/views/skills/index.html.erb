@@ -1,7 +1,4 @@
 
-<div class="floating">
-  <button type="button" class="btn btn-primary"><%= link_to 'Add new skill', new_skill_path, class: "link" %></button>
-</div>
 
 <div class="cards">
   <% @skills.each do |skill| %>
@@ -24,3 +21,5 @@
     </div>
   <% end %>
 </div>
+
+<button type="button" class="btn btn-custom floating"><%= link_to '', new_skill_path, class: "link fa-solid fa-plus" %></button>
