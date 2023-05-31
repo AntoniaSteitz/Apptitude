@@ -16,7 +16,8 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
     @skill.user = current_user
     if @skill.save
-      redirect_to skill_path(@skill), flash[:notice] = "Your profile has been updated."
+      redirect_to skill_path(@skill)
+      # , flash[:notice] = "Your profile has been updated."
       # notice: "Successfully booked!"
     else
       render :new, status: :unprocessable_entity
