@@ -21,19 +21,12 @@
         </div>
 
         <div class="card-footer bg-transparent text-right mtb-3">
-          <a href="/bookmark" class="btn btn-primary rounded-pill float-right px-5" >Book</a>
+          <%= link_to "Book", new_skill_booking_path(@skill), class: "btn btn-primary rounded-pill float-right px-5" %><br>
+
+          <%# <a href="/bookmark" class="btn btn-primary rounded-pill float-right px-5" >Book</a> %>
         </div>
       </div>
     </div>
    <div class="">
-<%= link_to '', skills_path, class: "fa-solid fa-arrow-left circle-xmark m-3", style: "color: #4056a1; font-size:200%; text-decoration: none;" %>
-
-
-  </div>
-  </div>
-
-  </div>
-
-
-
+  <%= link_to '', skills_path, class: "fa-solid fa-arrow-left circle-xmark m-3", style: "color: #4056a1; font-size:200%; text-decoration: none;" %>
 </div>

@@ -1,0 +1,12 @@
+<div class="container">
+<h1>Finish up your booking</h1>
+  <%= simple_form_for [@skill, @booking] do |f| %>
+    <%= f.input :date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+    <%# f.input :date %>
+    <%# f.association :movie %>
+    <%# f.association :bookmarks %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
