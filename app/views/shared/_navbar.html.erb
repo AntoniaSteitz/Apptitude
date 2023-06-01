@@ -1,12 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <div class="container-fluid" style="  padding-right: 40px;
-  padding-left: 40px;
-">
+  <div class="container-fluid" style="padding-right: 90px; padding-left: 90px;">
     <%= link_to root_path, class: "navbar-brand" do %>
-<%= inline_svg('logo.svg',  height: '30px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
-  <% end %>
-
+      <%= inline_svg('logo.svg',  height: '30px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
+    <% end %>
 
     <div class="d-flex justify-content-center">
     <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
@@ -17,7 +14,7 @@
             </div>
         </div>
     <% end %>
-</div>
+  </div>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,4 +42,4 @@
       </ul>
     </div>
   </div>
-  </div>
+</div>
