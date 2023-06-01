@@ -135,6 +135,9 @@ GEM
     importmap-rails (1.1.6)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    inline_svg (1.9.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
@@ -177,6 +180,9 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.3)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     popper_js (2.11.7)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -296,8 +302,10 @@ DEPENDENCIES
   faker
   font-awesome-sass (~> 6.4.0)
   importmap-rails
+  inline_svg
   jbuilder
   pg (~> 1.1)
+  pg_search
   puma (~> 5.0)
   rails (~> 7.0.5)
   sassc-rails
