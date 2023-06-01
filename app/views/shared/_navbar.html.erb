@@ -6,13 +6,13 @@
     <% end %>
 
     <div class="row">
-      <div class="col-10 d-flex justify-content-center">
+      <div class="col-auto d-flex justify-content-center">
         <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
             <div class="input-group">
-                <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "look for your new skill" %>
-                <div class="input-group-append">
-                    <%= submit_tag "Search", class: "btn btn-primary" %>
-                </div>
+                <%= text_field_tag :query, params[:query], class: "form-control rounded-pill mr-4", placeholder: "look for your new skill" %>
+            </div>
+            <div class="input-group-append">
+                <%= submit_tag "Search", class: "btn btn-primary rounded-pill" %>
             </div>
         <% end %>
       </div>
@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="col-2 align-item-right collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="col-auto align-item-right collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
