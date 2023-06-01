@@ -1,17 +1,18 @@
 .btn-custom {
-  width: 100px;
-  height: 30px;
-  background-color: $main-blue;
-  font-size: 12px;
+  border: 1px solid $main-blue;
+  border-radius: 50rem;
   text-align: center;
   margin-top: 3px;
 
-  &:hover {
-    background-color: $main-green;
-  }
+  text-align: center;
+  text-decoration: none;
+  color: $main-blue;
+  font-size: 14px;
 
-  .link {
-    text-decoration: none;
+
+  &:hover {
+    background-color: $main-blue;
     color: white;
-}
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  }
 }
