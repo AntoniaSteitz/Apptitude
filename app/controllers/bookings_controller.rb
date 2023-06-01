@@ -13,13 +13,26 @@ class BookingsController < ApplicationController
     # raise
     if @booking.save
       redirect_to dashboard_path
+      # booking_path(params[:id])
       # , notice: "Success!"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
+  def update
+    # raise
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      # redirect_to # up to you...
+      redirect_to booking_path(params[:id])
+    else
+      # render # where was the booking update form?
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :status)
   end
 end

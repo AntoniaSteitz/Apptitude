@@ -13,6 +13,7 @@
           <h5 class="card-title">By <%= booking.skill.user["first_name"] %></h5>
           <h6 class="card-subtitle"><%= booking.skill.category %></h6>
           <h6 class="card-title">Booked for: <%= booking.date %></h6>
+          <%= button_to "Update", booking_path(:id) %>
         </div>
       </div>
     <% end %>
