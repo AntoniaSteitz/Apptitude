@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding: 10px;
   border-style: none;
 
   .card {
@@ -10,7 +9,7 @@
     text-align:left;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
     background-color: $main-yellow;
-    margin: 2px;
+    margin: 10px;
   }
 
   .card-img-top {
