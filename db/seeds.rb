@@ -60,7 +60,7 @@ pottery_paul = Skill.create!(
   name: "Harry Potter",
   description: "In the mystical world of sexy pottery, I cast spells on clay, transforming it into curvaceous masterpieces. My magical touch brings Harry Potter-themed sculptures to life, celebrating body positivity one sensual vase at a time.",
   category: "Craftmanship",
-  user: User.find(132)
+  user: User.find_by(first_name: "Toni")
 )
 pottery_paul.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pottery_paul.save
