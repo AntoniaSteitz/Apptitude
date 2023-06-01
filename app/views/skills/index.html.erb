@@ -3,8 +3,12 @@
     <% @skills.each do |skill| %>
       <div class="card">
         <div class="card-img">
-          <%= cl_image_tag(skill.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
-        </div>
+    <% if skill.photo.present? %>
+      <%= cl_image_tag(skill.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
+    <% else %>
+      <%= cl_image_tag("images/default_avatar.jpg", class: "card-img-top", crop: :thumb, gravity: :face) %>
+    <% end %>
+  </div>
         <div class="card-body">
           <h5 class="card-title"><%= skill.name %></h5>
           <%# add user-avatar %>

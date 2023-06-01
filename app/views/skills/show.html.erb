@@ -7,9 +7,7 @@
         <div class="avatar-container">
           <% user = @skill.user %>
           <% if user.avatar_url.present? %>
-            <%= image_tag user.avatar_url, class: "rounded-circle avatar" %>
-          <% else %>
-            <%= image_tag "default_avatar.png", class: "rounded-circle avatar" %>
+          <%= image_tag user.avatar_url, class: "rounded-circle avatar" %>
           <% end %>
         </div>
 
@@ -19,14 +17,14 @@
 
       </div>
       <div>
-        <%= link_to '', skills_path, class: " arrow fa-solid fa-arrow-left circle-xmark" %>
+        <%= link_to '', skills_path, class: "arrow fa-solid fa-arrow-left circle-xmark" %>
       </div>
 
     </div>
     <div class="mt-3">
       <div class="row">
         <div class="col-md-7">
-          <div class="card-img-top" >
+          <div class="card-img-top">
             <% if @skill.photo.attached? %>
               <%= cl_image_tag @skill.photo.key, class: "img-fluid" %>
             <% else %>
