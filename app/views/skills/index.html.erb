@@ -1,28 +1,50 @@
-<div class="floating">
-  <button type="button" class="btn btn-primary"><%= link_to 'Add new skill', new_skill_path, class: "link" %></button>
-</div>
-
-<div class="cards">
-  <% @skills.each do |skill| %>
-    <div class="card">
-      <div class="card-img">
-        <% if skill.photo.attached? %>
-          <%= cl_image_tag skill.photo.key, class: "card-img-top" %>
-          <%# class: "img-fluid", style: "object-fit: cover;" %>
-        <% else %>
-          <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg",
-          class: "card-img-top") %>
-        <% end %>
+<%# here starts CARDS for adding a skill %>
+  <div class="cards">
+    <% @skills.each do |skill| %>
+      <div class="card">
+        <div class="card-img">
+          <% if skill.photo.attached? %>
+            <%= cl_image_tag skill.photo.key, class: "card-img-top" %>
+            <%# class: "img-fluid", style: "object-fit: cover;" %>
+          <% else %>
+            <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg",
+            class: "card-img-top") %>
+          <% end %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= skill.name %></h5>
+          <%# add user-avatar %>
+          <h6 class="card-title">with <%= skill.user["first_name"] %></h6>
+          <p class="card-text"><%= skill.category %></p>
+          <button class="btn btn-custom"><%= link_to "Details", skill_path(skill), class: "link" %></button>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title"><%= skill.name %></h5>
-        <%# add user-avatar %>
-        <h6 class="card-title">with <%= skill.user["first_name"] %></h6>
-        <p class="card-text"><%= skill.category %></p>
-        <button class="btn btn-custom"><%= link_to "Details", skill_path(skill), class: "link" %></button>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<%# here ends CARDS for adding a skill %>
 
-<button type="button" class="btn btn-custom floating"><%= link_to '', new_skill_path, class: "link fa-solid fa-plus" %></button>
+<%# here starts FLOATING BUTTON for adding a skill %>
+  <div class="floating-btns">
+    <%= link_to new_skill_path, class: "button blob-btn" do %>
+    Add your skill
+      <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+        </span>
+      </span>
+    <% end %>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+<%# here ends FLOATING BUTTON for adding a skill %>
