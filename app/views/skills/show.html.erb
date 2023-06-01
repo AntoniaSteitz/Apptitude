@@ -20,11 +20,24 @@
           <p class="card-text text-right mb-3"><%= @skill.description %></p>
         </div>
 
-        <div class="card-footer bg-transparent text-right mtb-3">
-          <%= link_to "Book", new_skill_booking_path(@skill), class: "btn btn-primary rounded-pill float-right px-5" %><br>
-
-          <%# <a href="/bookmark" class="btn btn-primary rounded-pill float-right px-5" >Book</a> %>
-        </div>
+        <%# <div class="card-footer bg-transparent text-right mtb-3"> %>
+          <div data-controller="toggle" class="mt-5">
+            <button  data-action="click->toggle#fire" class="btn custom">Book</button>
+              <%# button_to "Book", class: "btn btn-primary rounded-pill float-right px-5", data_action: "click->toggle#fire"%>
+               <%# link_to "Book", new_skill_booking_path(@skill), class: "btn btn-primary rounded-pill float-right px-5" %><br>
+              <div data-toggle-target="togglableElement" class="d-none">
+                <%= simple_form_for [@skill, @booking] do |f| %>
+                  <%= f.input :date,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker" } } %>
+                  <%# f.input :date %>
+                  <%# f.association :movie %>
+                  <%# f.association :bookmarks %>
+                  <%= f.submit "Submit", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+          </div>
+        <%# </div> %>
       </div>
     </div>
    <div class="">
