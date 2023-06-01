@@ -1,8 +1,24 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+
+  <div class="container-fluid" style="  padding-right: 40px;
+  padding-left: 40px;
+">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <h2 class="logo">Apptitude</h2>
+<%= inline_svg('logo.svg',  height: '30px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
+  <% end %>
+
+
+    <div class="d-flex justify-content-center">
+    <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
+        <div class="input-group">
+            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "look for your new skill" %>
+            <div class="input-group-append">
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+            </div>
+        </div>
     <% end %>
+</div>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
