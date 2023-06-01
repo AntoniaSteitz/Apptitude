@@ -3,6 +3,7 @@ class SkillsController < ApplicationController
   def index
     if params[:query].present?
       @skills = Skill.search_by_name_description_and_user_first_name(params[:query])
+
     else
       @skills = Skill.all
     end
