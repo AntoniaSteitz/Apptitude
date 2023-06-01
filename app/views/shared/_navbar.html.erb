@@ -1,15 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
 
-  <div class="container-fluid" style="padding-right: 90px; padding-left: 90px;">
+  <div class="container-fluid " style="padding-right: 90px; padding-left: 90px;">
+    <div class="logo-1">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= inline_svg('logo.svg',  height: '40px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
+      <%= inline_svg('logo.svg',  height: '50px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
     <% end %>
+    </div>
 
     <div class="row">
       <div class="col-auto d-flex justify-content-center">
         <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
-            <div class="input-group">
+            <div class="input-group" style="margin-right: 5px">
                 <%= text_field_tag :query, params[:query], class: "form-control rounded-pill mr-4", placeholder: "look for your new skill" %>
             </div>
             <div class="input-group-append">
