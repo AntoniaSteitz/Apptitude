@@ -1,7 +1,7 @@
 .page-container {
   display: grid;
   min-height: 100vh;
-  // grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
  }
 
 button {
@@ -13,5 +13,7 @@ button {
 
 .footer {
   background: $main-green;
+
+
   // height: 80px;
 }
