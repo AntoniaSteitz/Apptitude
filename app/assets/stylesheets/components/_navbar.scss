@@ -53,9 +53,9 @@
 }
 
 .navbar-logo {
-  color: #3D4CDD;
-}
+  color: $main-blue;
 
-.navbar-logo:hover {
-  color: #FFFF00;
+  &:hover {
+    color: $main-yellow;
+  }
 }
