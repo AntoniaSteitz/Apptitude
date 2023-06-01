@@ -1,9 +1,38 @@
 .skillcard {
-  // padding: 1.5em .5em .5em;
+  /* padding: 1.5em .5em .5em;
   border-radius: 2em;
-  // text-align: center;
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
-  background-color: $main-yellow;
+  text-align: center;
+  background-color: $main-yellow; */
   margin: auto;
-  width: 50%;
+  width: 60%;
+  padding: 20px;
+  border-style: solid;
+  border-width: 6px;
+  border-color: $main-yellow;
+  border-radius: 2em;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
+}
+
+.minicard {
+  /* thinking on it :D */
+}
+
+.card-img-top {
+  overflow: hidden;
+  border-radius: 1em;
+  object-fit: cover;}
+
+
+.arrow {
+  color:$main-blue;
+  font-size: 200%;
+  text-decoration: none;
+}
+
+.arrow:hover {
+  color: $main-red;
+  text-shadow: 0 5px 10px rgba(0,0,0,.2);
+  text-decoration: underline;
+
 }
