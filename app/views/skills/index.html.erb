@@ -10,7 +10,7 @@
           <%# add user-avatar %>
           <h6 class="card-title">with <%= skill.user["first_name"] %></h6>
           <p class="card-text"><%= skill.category %></p>
-          <button class="btn btn-custom"><%= link_to "Details", skill_path(skill), class: "link" %></button>
+          <%= link_to "Details", skill_path(skill), class: "link btn btn-custom" %>
         </div>
       </div>
     <% end %>
