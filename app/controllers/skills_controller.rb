@@ -1,8 +1,14 @@
 class SkillsController < ApplicationController
   add_flash_types :notice, :error, :success
   def index
-    @skills = Skill.all
+    if params[:query].present?
+      @skills = Skill.search_by_name_description_and_user_first_name(params[:query])
+    else
+      @skills = Skill.all
+    end
   end
+
+
 
   def show
     @skill = Skill.find(params[:id])

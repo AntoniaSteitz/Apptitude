@@ -85,3 +85,8 @@ gem 'faker'
 
 # adding the sweetalert gem
 # gem 'sweetalert-rails'
+
+gem 'inline_svg'
+#svg logo
+gem 'pg_search'
+#search tool
