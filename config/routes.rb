@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :skills do
     resources :bookings, only: [:new, :create]
   end
+
+  resources :bookings, only: [:update]
 end
 

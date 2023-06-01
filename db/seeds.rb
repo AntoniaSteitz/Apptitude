@@ -23,6 +23,15 @@ Skill.destroy_all
 end
 puts "users created"
 
+Toni = User.create(
+  first_name: "Toni",
+  last_name: "Steitz",
+  email: "toni@mail.de",
+  location: "Berlin",
+  avatar_url: Faker::Avatar.image,
+  password: "123456"
+)
+
 # faking the skills table
 painting_text = "My artistic prowess is unparalleled, with a brush in hand, I create masterpieces that redefine the concept of avocado still life. My paintings have been featured in underground galleries and trendy coffee shops."
 
@@ -51,7 +60,7 @@ pottery_paul = Skill.create!(
   name: "Harry Potter",
   description: "In the mystical world of sexy pottery, I cast spells on clay, transforming it into curvaceous masterpieces. My magical touch brings Harry Potter-themed sculptures to life, celebrating body positivity one sensual vase at a time.",
   category: "Craftmanship",
-  user: User.find(rand(2..11))
+  user: User.find_by(first_name: "Toni")
 )
 pottery_paul.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pottery_paul.save

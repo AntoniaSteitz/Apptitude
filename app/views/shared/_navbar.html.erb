@@ -1,50 +1,48 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <div class="container-fluid" style="  padding-right: 80px; padding-left: 80px;">
-<%# padding needs to be added to css just here for fast corrections %>
 
-    <div class="navbar-logo">
-      <%= link_to root_path  do %>
-      <%= inline_svg('logo.svg',  height: '40px', ) %>
-      <%# color for svg as style css related needs to be checked %>
-      <% end %>
-    </div>
-
-    <div>
-    <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
-        <div class="input-group">
-            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "up for new skills?" %>
-            <div class="input-group-append">
-                <%= submit_tag "Search", class: "btn btn-primary" %>
-            </div>
-        </div>
+  <div class="container-fluid" style="padding-right: 90px; padding-left: 90px;">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= inline_svg('logo.svg',  height: '40px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
     <% end %>
-    </div>
 
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://i.insider.com/631efb1de8b500001850c163?width=1136&format=jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Home", root_path, class: "dropdown-item" %>
-              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-
-              <div class="dropdown-divider"></div>
-              <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <div class="row">
+      <div class="col-auto d-flex justify-content-center">
+        <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
+            <div class="input-group">
+                <%= text_field_tag :query, params[:query], class: "form-control rounded-pill mr-4", placeholder: "look for your new skill" %>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+            <div class="input-group-append">
+                <%= submit_tag "Search", class: "btn btn-primary rounded-pill" %>
+            </div>
         <% end %>
-      </ul>
+      </div>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="col-auto align-item-right collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://i.insider.com/631efb1de8b500001850c163?width=1136&format=jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Home", root_path, class: "dropdown-item" %>
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+
+                <div class="dropdown-divider"></div>
+                <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
