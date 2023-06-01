@@ -52,10 +52,32 @@
   font-style: bold;
 }
 
-.navbar-logo {
-  color: $main-blue;
+// logo
 
-  &:hover {
-    color: $main-yellow;
-  }
+.logo-container {
+  height: 80px;
+}
+
+.logo-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.frame1 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.logo-container:hover .frame1 {
+  opacity: 0;
+}
+
+.logo-container:hover .frame2 {
+  opacity: 1;
 }
