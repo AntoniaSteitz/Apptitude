@@ -13,8 +13,7 @@
     margin: 10px;
 
     &:hover {
-      border: 3px solid $main-blue;
-      border-radius: 20px;
+      outline: 3px solid $main-blue;
       box-shadow: 0 15px 30px rgba(0,0,0,.3);
     }
   }
