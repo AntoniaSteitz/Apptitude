@@ -21,8 +21,10 @@ class SkillsController < ApplicationController
   end
 
   def create
-    @skill = Skill.new(skill_params)
-    @skill.user = current_user
+    @skill = Skill.new(skill_params).tap do |skill|
+      skill.user = current_user
+    end
+    # @skill.user = current_user
     if @skill.save
       redirect_to skill_path(@skill)
       # , flash[:notice] = "Your profile has been updated."
