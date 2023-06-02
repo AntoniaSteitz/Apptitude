@@ -65,23 +65,20 @@
 <%# here ends BOOKING section %>
 
 <%# here starts OFFERS section %>
-<div class="container">
+
+<div class="my_offers">
   <h1>My Offers</h1>
   <div class="cards">
     <% @skills.each do |skill| %>
     <div class="card">
-      <div class="card-img">
-           <%= cl_image_tag(skill.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
+      <div class="card-img" id = "myImage" >
+          <%= cl_image_tag(skill.photo.key, class: "card-img", crop: :thumb, gravity: :face) %>
       </div>
-      <div class="card-body">
-          <h5 class="card-title"><%= skill.name %></h5>
-
-          <h5 class="card-title">By <%= skill.user["first_name"] %></h5>
-          <%# <h5 class="card-title">By <%= skill.booking.date %></h5>
-          <h6 class="card-subtitle"><%= skill.category %></h6>
+      <div class="card-img-overlay d-flex">
+        <h5 class="card-title align-self-center mx-auto"><%= skill.name %></h5>
       </div>
     </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
 <%# here ends OFFERS section %>

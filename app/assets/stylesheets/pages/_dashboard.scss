@@ -38,3 +38,47 @@
     margin-bottom: -5px;
   }
 }
+
+.my_offers .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  border-style: none;
+
+  .card {
+    border-radius: 1em;
+    border: none;
+    text-align:left;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    background-color: $main-yellow;
+    margin: 10px;
+  }
+
+  .card-img {
+    border-radius: 1em;
+    object-fit: cover;
+    height:350px;
+  }
+
+  #myImage {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+  }
+
+  .card-text {
+    position: absolute;
+    right: 16px;
+    bottom: 0px;
+  }
+
+  .card-subtitle {
+    position: absolute;
+    left: 16px;
+    top: 355px;
+  }
+
+  .card-title {
+    margin-top: 8px;
+    margin-bottom: -5px;
+  }
+}
