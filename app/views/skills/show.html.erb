@@ -25,11 +25,7 @@
       <div class="row">
         <div class="col-md-7">
           <div class="card-img-top">
-            <% if @skill.photo.attached? %>
-              <%= cl_image_tag @skill.photo.key, class: "img-fluid" %>
-            <% else %>
-              <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg", class: "img-fluid", style: "object-fit: cover;") %>
-            <% end %>
+            <%= cl_image_tag(@skill.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
           </div>
         </div>
         <div class="col-md-5">
@@ -42,30 +38,32 @@
           <div class="mt-3">
             <p class="card-text"><%= @skill.description %></p>
           </div>
-          <div class="mt-3 text-center">
-            <%= link_to "Book", new_skill_booking_path(@skill), class: "btn-custom" %><br>
+          <%# old button: %>
+          <%# <div class="mt-3 text-center"> %>
+            <%# link_to "Book", new_skill_booking_path(@skill), class: "btn-custom" %><br>
+          <%# </div> %>
+          <%# new button with toggle %>
+          <div data-controller="toggle" class="mtb-5 p-3 text-center">
+            <%# button_to "Book", class: "btn btn-primary rounded-pill float-right px-5", data_action: "click->toggle#fire"%>
+            <button data-action="click->toggle#fire" class="btn btn-primary rounded-pill w-50">Book</button>
+          <br>
+          <br>
+          <div data-toggle-target="togglableElement" class="d-none">
+            <%= simple_form_for [@skill, @booking] do |f| %>
+              <%= f.input :date, label:'Pick a date',
+                        as: :string,
+                        input_html: { data: { controller: "datepicker" } } %>
+              <%# f.input :date %>
+              <%# f.association :movie %>
+              <%# f.association :bookmarks %>
+              <%= f.submit "Submit", class: "btn btn-custom" %>
+            <% end %>
+          </div>
           </div>
         </div>
 
-        <%# check with darima form here %>
-        
         <%# <div class="card-footer bg-transparent text-right mtb-3"> %>
-          <div data-controller="toggle" class="mtb-5">
-              <%# button_to "Book", class: "btn btn-primary rounded-pill float-right px-5", data_action: "click->toggle#fire"%>
-               <%# link_to "Book", new_skill_booking_path(@skill), class: "btn btn-primary rounded-pill float-right px-5" %><br>
-              <div data-toggle-target="togglableElement" class="d-none">
-                <%= simple_form_for [@skill, @booking] do |f| %>
-                  <%= f.input :date, label:'Pick a date',
-                            as: :string,
-                            input_html: { data: { controller: "datepicker" } } %>
-                  <%# f.input :date %>
-                  <%# f.association :movie %>
-                  <%# f.association :bookmarks %>
-                  <%= f.submit "Submit", class: "btn btn-primary" %>
-                <% end %>
-              </div>
-          </div>
-        <%# </div> %>
+
       </div>
     </div>
     <div id="booking-form" style="display: none;">
