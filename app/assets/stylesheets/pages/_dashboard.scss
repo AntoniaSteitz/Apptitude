@@ -1,41 +1,135 @@
-.my_bookings .cards {
+// here starts the CSS for request and profile row
+.my_requests {
+    .cards {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-gap: 16px;
+      border-style: none;
+    }
+
+    .profile {
+      grid-template-columns: 3fr 1fr;
+    }
+
+    .booking-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // grid-gap: 30px;
+    }
+
+    .card-text {
+      position: absolute;
+      left: 16px;
+      bottom: 100px;
+      color: $main-blue;
+      text-shadow: -1px 0 rgba(242, 246, 253, 0.6), 0 1px rgba(242, 246, 253, 0.6), 1px 0 rgba(242, 246, 253, 0.6), 0 -1px rgba(242, 246, 253, 0.6);
+    }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+// here starts the CSS for booking row
+.my_bookings {
+  .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr;
   grid-gap: 16px;
   border-style: none;
 
-  .card {
-    border-radius: 1em;
-    border: none;
-    text-align:left;
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
-    background-color: $main-yellow;
-    margin: 10px;
-  }
+    .card {
+      border-radius: 1em;
+      border: none;
+      text-align:left;
+      box-shadow: 0 5px 10px rgba(0,0,0,.2);
+      background-color: $main-yellow;
+      margin: 10px;
+    }
 
-  .card-img-top {
-    border-radius: 1em;
-    object-fit: cover;
-    height:350px;
-    border-bottom-right-radius: 0%;
-    border-bottom-left-radius: 0%;
-  }
+    .card-img-top {
+      border-radius: 1em;
+      object-fit: cover;
+      height:350px;
+      border-bottom-right-radius: 0%;
+      border-bottom-left-radius: 0%;
+    }
 
-  .card-text {
-    position: absolute;
-    right: 16px;
-    bottom: 0px;
-  }
+    .card-text {
+      position: absolute;
+      left: 16px;
+      bottom: 120px;
+      color: $main-blue;
+      text-shadow: -1px 0 rgba(242, 246, 253, 0.6), 0 1px rgba(242, 246, 253, 0.6), 1px 0 rgba(242, 246, 253, 0.6), 0 -1px rgba(242, 246, 253, 0.6);
+    }
 
-  .card-subtitle {
-    position: absolute;
-    left: 16px;
-    top: 355px;
-  }
+    .card-subtitle {
+      position: absolute;
+      left: 16px;
+      top: 355px;
+    }
 
-  .card-title {
-    margin-top: 8px;
-    margin-bottom: -5px;
+    .card-title {
+      margin-top: 8px;
+      margin-bottom: -5px;
+    }
+  }
+}
+
+
+
+
+
+.my_requests {
+  // Add styling for the "My Requests" section
+
+  .row {
+    // Add styling for the row
+
+    .cards {
+      width: 66.66%; // Set width to 2/3 of the row
+      float: left;
+    }
+
+    .profile {
+      width: 33.33%; // Set width to 1/3 of the row
+      float: right;
+    }
+  }
+}
+
+.my_bookings {
+  // Add styling for the "My Bookings" section
+
+  .row {
+    // Add styling for the row
+
+    h5 {
+      // Add styling for the heading
+    }
+
+    .cards {
+      width: 50%; // Set width to 50% of the row
+      float: left;
+
+      &.accepted {
+        // Add styling for the "Accepted Bookings" cards
+      }
+
+      &.pending {
+        // Add styling for the "Pending Bookings" cards
+      }
+    }
+  }
+}
+
+.my_offers {
+  // Add styling for the "My Offers" section
+
+  .cards {
+    // Add styling for the cards in the "My Offers" section
   }
 }
 
