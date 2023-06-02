@@ -1,0 +1,10 @@
+.notice {
+  position: fixed;
+  top: 65px;
+  left: 90px;
+  z-index: 1000;
+  // background-color: $yellow;
+  color: $main-blue;
+  box-shadow: 0 15px 30px rgba(0,0,0,.3);
+  // padding: 5px;
+}

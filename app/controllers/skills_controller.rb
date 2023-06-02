@@ -26,7 +26,7 @@ class SkillsController < ApplicationController
     end
     # @skill.user = current_user
     if @skill.save
-      redirect_to skill_path(@skill)
+      redirect_to skill_path(@skill), notice: "Thanks for adding a new skill to our community :)"
       # , flash[:notice] = "Your profile has been updated."
       # notice: "Successfully booked!"
     else

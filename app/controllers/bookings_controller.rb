@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     # raise
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path, notice: "Success! Your request was sent :)"
       # booking_path(params[:id])
       # , notice: "Success!"
     else
