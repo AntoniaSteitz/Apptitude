@@ -1,18 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <div class="container-fluid" style="padding-right: 90px; padding-left: 90px;">
+
+  <div class="container-fluid " style="padding-right: 90px; padding-left: 90px;">
+    <div class="logo-1">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= inline_svg('logo.svg',  height: '30px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
+      <%= inline_svg('logo.svg',  height: '50px', class: 'mi-clase', style: 'fill: #3D4CDD') %>
     <% end %>
+    </div>
 
     <div class="row">
-      <div class="col-10 d-flex justify-content-center">
+      <div class="col-auto d-flex justify-content-center">
         <%= form_with url: skills_path, method: :get, class: "d-flex" do %>
-            <div class="input-group">
-                <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "look for your new skill" %>
-                <div class="input-group-append">
-                    <%= submit_tag "Search", class: "btn btn-primary" %>
-                </div>
+            <div class="input-group" style="margin-right: 5px">
+                <%= text_field_tag :query, params[:query], class: "form-control rounded-pill mr-4", placeholder: "look for your new skill" %>
+            </div>
+            <div class="input-group-append">
+                <%= submit_tag "Search", class: "btn btn-primary rounded-pill" %>
             </div>
         <% end %>
       </div>
@@ -22,7 +25,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="col-2 align-item-right collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="col-auto align-item-right collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">

@@ -1,29 +1,56 @@
-<div class="container justify-content-center align-items-center ">
-  <div class="skillcard d-flex" style="width: 100%; max-width: 900px">
+<div class="container justify-content-center align-items-center">
+  <div class="skillcard">
+    <div class="d-flex justify-content-between align-items-center">
 
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <div class="card-img-top" style="height: 100%; overflow: hidden; border-radius: 2em 0 0 2em;object-fit: cover;">
-          <% if @skill.photo.attached? %>
-            <%= cl_image_tag @skill.photo.key, class: "img-fluid rounded-left" %>
-          <% else %>
-            <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg", class: "img-fluid rounded-left", style: "object-fit: cover;") %>
+      <div class="d-flex align-items-center">
+
+        <div class="avatar-container">
+          <% user = @skill.user %>
+          <% if user.avatar_url.present? %>
+          <%= image_tag user.avatar_url, class: "rounded-circle avatar" %>
           <% end %>
         </div>
+
+        <div class="user-name ml-3">
+          <%= user.first_name %>
+        </div>
+
+      </div>
+      <div>
+        <%= link_to '', skills_path, class: "arrow fa-solid fa-arrow-left circle-xmark" %>
       </div>
 
-      <div class="col-md-8 border-0 pt-4">
-        <div class="card-body " >
-          <h5 class="card-title text-right"><%= @skill.name %></h5>
-          <%# add user %>
-          <h5 class="card-title text-right "><%= @skill.user["first_name"] %></h5>
-          <h6 class="card-subtitle text-right mb-2"><%= @skill.category %></h6>
-          <p class="card-text text-right mb-3"><%= @skill.description %></p>
+    </div>
+    <div class="mt-3">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card-img-top">
+            <% if @skill.photo.attached? %>
+              <%= cl_image_tag @skill.photo.key, class: "img-fluid" %>
+            <% else %>
+              <%= cl_image_tag("https://res.cloudinary.com/dnx6ly8vl/image/upload/v1685450930/default_fqx7cj.jpg", class: "img-fluid", style: "object-fit: cover;") %>
+            <% end %>
+          </div>
         </div>
+        <div class="col-md-5">
+          <div class="mt-3">
+            <h5 class="card-title"><%= @skill.name %></h5>
+          </div>
+          <div class="mt-3">
+            <h6 class="card-subtitle"><%= @skill.category %></h6>
+          </div>
+          <div class="mt-3">
+            <p class="card-text"><%= @skill.description %></p>
+          </div>
+          <div class="mt-3 text-center">
+            <%= link_to "Book", new_skill_booking_path(@skill), class: "btn-custom" %><br>
+          </div>
+        </div>
+
+        <%# check with darima form here %>
 
         <%# <div class="card-footer bg-transparent text-right mtb-3"> %>
           <div data-controller="toggle" class="mtb-5">
-            <button  data-action="click->toggle#fire" class="btn custom">Book</button>
               <%# button_to "Book", class: "btn btn-primary rounded-pill float-right px-5", data_action: "click->toggle#fire"%>
                <%# link_to "Book", new_skill_booking_path(@skill), class: "btn btn-primary rounded-pill float-right px-5" %><br>
               <div data-toggle-target="togglableElement" class="d-none">
@@ -41,6 +68,8 @@
         <%# </div> %>
       </div>
     </div>
-   <div class="">
-  <%= link_to '', skills_path, class: "fa-solid fa-arrow-left circle-xmark m-3", style: "color: #4056a1; font-size:200%; text-decoration: none;" %>
+    <div id="booking-form" style="display: none;">
+      Booking form here
+    </div>
+  </div>
 </div>

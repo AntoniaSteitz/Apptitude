@@ -52,10 +52,15 @@
   font-style: bold;
 }
 
-.navbar-logo {
-  color: #3D4CDD;
-}
+// logo
 
-.navbar-logo:hover {
-  color: #FFFF00;
-}
+// .logo-1 .frame {
+//   width: auto;
+//   height: 50px;
+//   background: url(<%= asset_path 'frame1.png' %>) center no-repeat;
+//   background-size: auto 100%;
+// }
+
+// .logo-1:hover .frame {
+//   background-image: url(<%= asset_path 'frame2.png' %>);
+// }
